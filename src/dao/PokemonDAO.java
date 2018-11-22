@@ -32,11 +32,10 @@ public class PokemonDAO {
                 Pokemon pokemon = new Pokemon(
                         rs.getString(1),
                         rs.getString(2),
-                        rs.getString(3),
+                        rs.getInt(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                        rs.getString(6),
-                        rs.getString(7));
+                        rs.getString(5),
+                        rs.getString(6));
                 pokemons.add(pokemon);
             }
 
@@ -62,11 +61,10 @@ public class PokemonDAO {
                 Pokemon pokemon = new Pokemon(
                         rs.getString(1),
                         rs.getString(2),
-                        rs.getString(3),
+                        rs.getInt(3),
                         rs.getInt(4),
-                        rs.getInt(5),
-                        rs.getString(6),
-                        rs.getString(7));
+                        rs.getString(5),
+                        rs.getString(6));
                 pokemons.add(pokemon);
             }
 

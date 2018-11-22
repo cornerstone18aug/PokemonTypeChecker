@@ -31,7 +31,6 @@ public class PokemonContoller {
                     for (Pokemon pokemon : pokemons) {
                         System.out.println("ID: " + pokemon.getId());
                         System.out.println("NAME: " + pokemon.getName());
-                        System.out.println("CATEGORY: " + pokemon.getCategory());
                         System.out.print("TYPE: ");
                         TypeEnum typeEnum = new TypeEnum(pokemon.getType1());
                         typeEnum.setPokemonTypes();
@@ -47,7 +46,6 @@ public class PokemonContoller {
                 for (Pokemon pokemon : pokemons) {
                     System.out.println("ID: " + pokemon.getId());
                     System.out.println("NAME: " + pokemon.getName());
-                    System.out.println("CATEGORY: " + pokemon.getCategory());
                     System.out.print("TYPE: ");
                     TypeEnum typeEnum = new TypeEnum(pokemon.getType1());
                     typeEnum.setPokemonTypes();

@@ -5,16 +5,14 @@ package model;
 public class Pokemon {
     private String id;
     private String name;
-    private String category;
     private int type1;
     private int type2;
     private String image;
     private String roar;
 
-    public Pokemon(String id, String name, String category, int type1, int type2, String image, String roar) {
+    public Pokemon(String id, String name, int type1, int type2, String image, String roar) {
         this.id = id;
         this.name = name;
-        this.category = category;
         this.type1 = type1;
         this.type2 = type2;
         this.image = image;
@@ -35,14 +33,6 @@ public class Pokemon {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     public int getType1() {
