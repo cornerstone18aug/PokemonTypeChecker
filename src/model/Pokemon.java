@@ -3,14 +3,16 @@ package model;
  * Created by katayama on 2018/11/20.
  */
 public class Pokemon {
-    private String id;
+    private int id;
     private String name;
     private int type1;
     private int type2;
     private String image;
     private String roar;
 
-    public Pokemon(String id, String name, int type1, int type2, String image, String roar) {
+    public Pokemon(){}
+
+    public Pokemon(int id, String name, int type1, int type2, String image, String roar) {
         this.id = id;
         this.name = name;
         this.type1 = type1;
@@ -19,11 +21,11 @@ public class Pokemon {
         this.roar = roar;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
