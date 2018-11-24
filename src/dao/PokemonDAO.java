@@ -15,13 +15,13 @@ public class PokemonDAO {
     PreparedStatement st = null;
     ResultSet rs = null;
 
-    static String URL = "jdbc:mysql://127.0.0.1:3306/pokemon?useUnicode=true&characterEncoding=utf8";
+    static String URL = "jdbc:mysql://localhost:43306/pokemon?useUnicode=true&characterEncoding=utf8";
     static String USER = "root";
-    static String PW = "";
+    static String PW = "yk908447";
 
     public Pokemon search(String inputName) {
         Pokemon pokemon = new Pokemon();
-        TypeEnum typeEnum;
+        TypeEnum typeEnum = new TypeEnum();
         try {
             String SQL = "SELECT * FROM pokemondata WHERE name = '" + inputName + "'";
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -33,11 +33,8 @@ public class PokemonDAO {
             while (rs.next()) {
                 pokemon.setId(rs.getInt(1));
                 pokemon.setName(rs.getString(2));
-                typeEnum = new TypeEnum(rs.getInt(3), rs.getInt(4));
-                typeEnum.setPokemonType1();
-                pokemon.setType1(pokemon.getType1());
-                typeEnum.setPokemonType2();
-                pokemon.setType2(pokemon.getType2());
+                pokemon.setType1(typeEnum.setPokemonType1(String.valueOf(rs.getInt(3))));
+                pokemon.setType2(typeEnum.setPokemonType2(String.valueOf(rs.getInt(4))));
                 pokemon.setImage(rs.getString(5));
                 pokemon.setRoar(rs.getString(6));
             }
