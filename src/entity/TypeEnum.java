@@ -6,74 +6,67 @@ import model.Pokemon;
  * Created by katayama on 2018/11/20.
  */
 public class TypeEnum {
-    private int type1;
-    private int type2;
-    Pokemon pokemon = new Pokemon();
-
-    public TypeEnum(int type1, int type2) {
-        this.type1 = type1;
-        this.type2 = type2;
-    }
-
-    public void setPokemonType1() {
+    public String setPokemonType1(String type1) {
         switch (type1) {
-            case 1:
-                pokemon.setType1("Water");
+            case "1":
+                type1 = "Water";
                 break;
-            case 2:
-                pokemon.setType1("Fire");
+            case "2":
+                type1 = "Fire";
                 break;
-            case 3:
-                pokemon.setType1("Electrical");
+            case "3":
+                type1 = "Electrical";
                 break;
-            case 4:
-                pokemon.setType1("Grass");
+            case "4":
+                type1 = "Grass";
                 break;
-            case 5:
-                pokemon.setType1("Ground");
+            case "5":
+                type1 = "Ground";
                 break;
-            case 6:
-                pokemon.setType1("Fairy");
+            case "6":
+                type1 = "Fairy";
                 break;
-            case 7:
-                pokemon.setType1("Bug");
+            case "7":
+                type1 = "Bug";
                 break;
-            case 8:
-                pokemon.setType1("Poison");
+            case "8":
+                type1 = "Poison";
                 break;
             default:
                 break;
         }
+        return type1;
     }
 
-    public void setPokemonType2() {
-        switch (type1) {
-            case 1:
-                pokemon.setType1("Water");
+    public String setPokemonType2(String type2) {
+        switch (type2) {
+            case "1":
+                type2 = "Water";
                 break;
-            case 2:
-                pokemon.setType1("Fire");
+            case "2":
+                type2 = "Fire";
                 break;
-            case 3:
-                pokemon.setType1("Electrical");
+            case "3":
+                type2 = "Electrical";
                 break;
-            case 4:
-                pokemon.setType1("Grass");
+            case "4":
+                type2 = "Grass";
                 break;
-            case 5:
-                pokemon.setType1("Ground");
+            case "5":
+                type2 = "Ground";
                 break;
-            case 6:
-                pokemon.setType1("Fairy");
+            case "6":
+                type2 = "Fairy";
                 break;
-            case 7:
-                pokemon.setType1("Bug");
+            case "7":
+                type2 = "Bug";
                 break;
-            case 8:
-                pokemon.setType1("Poison");
+            case "8":
+                type2 = "Poison";
                 break;
             default:
                 break;
         }
+        return type2;
     }
 }
