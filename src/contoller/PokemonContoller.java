@@ -3,6 +3,7 @@ package contoller;
 import dao.PokemonDAO;
 import entity.TypeEnum;
 import model.Pokemon;
+import typeChecker.TypeCheckArray;
 
 import java.util.List;
 import java.util.Scanner;
@@ -13,7 +14,7 @@ public class PokemonContoller {
     public static void main(String[] args) {
         List<Pokemon> pokemons;
         PokemonDAO pdao = new PokemonDAO();
-        System.out.println("----------Chose----------");
+        System.out.println("----------Choose----------");
         System.out.println("s:Search");
         System.out.println("a:ALL");
         System.out.println("q:Quit");
@@ -38,6 +39,9 @@ public class PokemonContoller {
                         System.out.println("IMAGE: " + pokemon.getImage());
                         System.out.println("ROAR: " + pokemon.getRoar());
                         System.out.println("");
+                        TypeCheckArray typeCheckArray = new TypeCheckArray();
+                        typeCheckArray.printType(pokemon.getType1());
+
                     }
                 }
             }
@@ -56,7 +60,7 @@ public class PokemonContoller {
                 }
             }
 
-            System.out.println("----------Chose----------");
+            System.out.println("----------Choose----------");
             System.out.println("s:Search");
             System.out.println("a:ALL");
             System.out.println("q:Quit");
