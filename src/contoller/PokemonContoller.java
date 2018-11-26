@@ -66,11 +66,10 @@ public class PokemonContoller {
         /////////
         pokemon = pdao.search(inputName);
 
-
         // write code to change view
 
+        display(pokemon);
 
-        pokeImg = new Image("sample1.png");
 
         weekLabelImg1 = new Image("samplelabel1.png");
         weekLabelImg2 = new Image("samplelabel2.png");
@@ -96,12 +95,14 @@ public class PokemonContoller {
             String selectedItem = pokemonList.getSelectionModel().getSelectedItem();
             System.out.println(selectedItem);
 
-
+            pokemon =  pdao.search(selectedItem);
+            display(pokemon);
         }
     }
 
     public void display(Pokemon dispalyPokemon) {
-        
+        pokeImg = new Image(dispalyPokemon.getImage());
+        pokemonImage.setImage(pokeImg);
     }
 
 
