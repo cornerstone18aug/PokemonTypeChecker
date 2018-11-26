@@ -48,9 +48,6 @@ public class PokemonDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(pokemon.getId());
-        System.out.println(pokemon.getName());
-        System.out.println(pokemon.getType1());
         return pokemon;
     }
 

@@ -7,66 +7,75 @@ import model.Pokemon;
  */
 public class TypeEnum {
     public String setPokemonType1(String type1) {
-        switch (type1) {
-            case "1":
-                type1 = "Water";
-                break;
-            case "2":
-                type1 = "Fire";
-                break;
-            case "3":
-                type1 = "Electrical";
-                break;
-            case "4":
-                type1 = "Grass";
-                break;
-            case "5":
-                type1 = "Ground";
-                break;
-            case "6":
-                type1 = "Fairy";
-                break;
-            case "7":
-                type1 = "Bug";
-                break;
-            case "8":
-                type1 = "Poison";
-                break;
-            default:
-                break;
-        }
-        return type1;
+        String typeOutPut = originalType(type1);
+        return typeOutPut;
     }
 
     public String setPokemonType2(String type2) {
-        switch (type2) {
+        String typeOutPut = originalType(type2);
+        return typeOutPut;
+    }
+
+
+    public String originalType(String type) {
+        switch (type) {
             case "1":
-                type2 = "Water";
+                type = "Normal";
                 break;
             case "2":
-                type2 = "Fire";
+                type = "Fire";
                 break;
             case "3":
-                type2 = "Electrical";
+                type = "Water";
                 break;
             case "4":
-                type2 = "Grass";
+                type = "Electric";
                 break;
             case "5":
-                type2 = "Ground";
+                type = "Grass";
                 break;
             case "6":
-                type2 = "Fairy";
+                type = "Ice";
                 break;
             case "7":
-                type2 = "Bug";
+                type = "Fighting";
                 break;
             case "8":
-                type2 = "Poison";
+                type = "Poison";
+                break;
+            case "9":
+                type = "Ground";
+                break;
+            case "10":
+                type = "Flying";
+                break;
+            case "11":
+                type = "Psychic";
+                break;
+            case "12":
+                type = "Bug";
+                break;
+            case "13":
+                type = "Rock";
+                break;
+            case "14":
+                type = "Ghost";
+                break;
+            case "15":
+                type = "Dragon";
+                break;
+            case "16":
+                type = "Dark";
+                break;
+            case "17":
+                type = "Steel";
+                break;
+            case "18":
+                type = "Fairy";
                 break;
             default:
                 break;
         }
-        return type2;
+        return type;
     }
 }

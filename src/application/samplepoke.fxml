@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contoller.PokemonContoller">
@@ -43,25 +42,21 @@
                <children>
                   <ImageView fx:id="pokemonImage" layoutX="34.0" layoutY="26.0">
                      <image>
-                        <Image url="@../logo.png" />
+                        <Image url="@../img/logo.png" />
                      </image>
                   </ImageView>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="219.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" width="64.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="25.0" layoutX="289.0" layoutY="93.0" stroke="BLACK" strokeType="INSIDE" width="61.0" />
-                  <Label layoutX="219.0" layoutY="42.0" text="NO.001" />
-                  <Label layoutX="218.0" layoutY="62.0" prefHeight="17.0" prefWidth="115.0" text="Bulbasaur">
+                  <Label fx:id="pokemonIdTag" layoutX="219.0" layoutY="42.0" text="POKEMON" />
+                  <Label fx:id="pokemonNameTag" layoutX="218.0" layoutY="62.0" prefHeight="27.0" prefWidth="216.0" text="PokemonName">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Label>
-                  <Label contentDisplay="TOP" layoutX="296.0" layoutY="97.0" prefHeight="17.0" prefWidth="48.0" text="Poison" textAlignment="CENTER" />
                   <Label layoutX="221.0" layoutY="127.0" text="Roar">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <Label contentDisplay="TOP" layoutX="235.0" layoutY="97.0" prefHeight="17.0" prefWidth="57.0" text="Grass" textAlignment="CENTER" />
-                  <Button layoutX="219.0" layoutY="155.0" mnemonicParsing="false" text="Roar" />
+                  <Button fx:id="roarButton" layoutX="219.0" layoutY="155.0" mnemonicParsing="false" onAction="#onRoarButtonclick" text="Roar" />
                   <GridPane gridLinesVisible="true" layoutX="34.0" layoutY="210.0" prefHeight="160.0" prefWidth="398.0">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="0.0" prefWidth="75.0" />
@@ -92,6 +87,8 @@
                         </ImageView>
                      </children>
                   </GridPane>
+                  <ImageView fx:id="type_1Tag" fitHeight="28.0" fitWidth="60.0" layoutX="218.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="type_2Tag" fitHeight="28.0" fitWidth="60.0" layoutX="289.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
         </items>
