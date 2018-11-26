@@ -125,6 +125,12 @@ public class PokemonContoller {
 
         Image typeImg1 = new Image(typeImageURL(displayPokemon.getType1()));
         type_1Tag.setImage(typeImg1);
+        if ((typeImageURL(displayPokemon.getType2())) == null) {
+            type_2Tag.imageProperty().set(null);
+        } else {
+            Image typeImg2 = new Image(typeImageURL(displayPokemon.getType2()));
+            type_2Tag.setImage(typeImg2);
+        }
 
         pokemonIdTag.setText("NO." + displayPokemonId);
         pokemonNameTag.setText(displayPokemonName);
