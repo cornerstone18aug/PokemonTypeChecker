@@ -1,6 +1,8 @@
 package contoller;
 
 import dao.PokemonDAO;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,6 +10,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
 import model.Pokemon;
 
 import java.util.ArrayList;
@@ -75,11 +79,22 @@ public class PokemonContoller {
         label1.setImage(weekLabelImg1);
         label2.setImage(weekLabelImg2);
 
+        // display pokemon Name in ListView
         List<String> nameAll = pdao.allName();
-        for (String pokeName: nameAll) {
-            pokemonList.getItems().add(pokeName);
+        ObservableList<String> items = FXCollections.observableArrayList(nameAll);
+        pokemonList.setItems(items);
+        System.out.println(items);
+    }
+
+    @FXML
+    void selectName(MouseEvent event) {
+        boolean doubleClicked = event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2;
+        if (doubleClicked) {
+            // write code when name double is double-clicked in ListView
+            System.out.println("Double clicked");
         }
     }
+
 
 
 }
