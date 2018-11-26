@@ -1,6 +1,8 @@
 package contoller;
 
 import dao.PokemonDAO;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -62,7 +64,7 @@ public class PokemonContoller {
 
         // search name from Database
         /////////
-        pdao.search(inputName);
+        pokemon = pdao.search(inputName);
 
 
         // write code to change view
@@ -91,8 +93,15 @@ public class PokemonContoller {
         boolean doubleClicked = event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2;
         if (doubleClicked) {
             // write code when name double is double-clicked in ListView
-            System.out.println("Double clicked");
+            String selectedItem = pokemonList.getSelectionModel().getSelectedItem();
+            System.out.println(selectedItem);
+
+
         }
+    }
+
+    public void display(Pokemon dispalyPokemon) {
+        
     }
 
 
