@@ -4,6 +4,7 @@ import dao.PokemonDAO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -20,6 +21,9 @@ public class PokemonContoller {
 
     @FXML
     private TextField searchName;
+
+    @FXML
+    private ListView<String> pokemonList;
 
 
     @FXML
@@ -40,10 +44,10 @@ public class PokemonContoller {
     Image weekLabelImg1;
     Image weekLabelImg2;
 
-    public Pokemon search(String inputName) {
-        pokemon = pdao.search(inputName);
-        return pokemon;
-    }
+//    public Pokemon search(String inputName) {
+//        pokemon = pdao.search(inputName);
+//        return pokemon;
+//    }
 
 
     @FXML
@@ -54,7 +58,7 @@ public class PokemonContoller {
 
         // search name from Database
         /////////
-        // search(inputName);
+        pdao.search(inputName);
 
 
         // write code to change view
@@ -70,6 +74,11 @@ public class PokemonContoller {
 
         label1.setImage(weekLabelImg1);
         label2.setImage(weekLabelImg2);
+
+        List<String> nameAll = pdao.allName();
+        for (String pokeName: nameAll) {
+            pokemonList.getItems().add(pokeName);
+        }
     }
 
 

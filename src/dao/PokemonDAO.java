@@ -15,17 +15,21 @@ public class PokemonDAO {
     PreparedStatement st = null;
     ResultSet rs = null;
 
-    static String URL = "jdbc:mysql://localhost:43306/pokemon?useUnicode=true&characterEncoding=utf8";
+    private List<String> allPokemonName;
+
+    static String URL = "jdbc:mysql://localhost:3306/pokemonDB?useUnicode=true&characterEncoding=utf8";
     static String USER = "root";
-    static String PW = "yk908447";
+    static String PW = "test";
 
     public Pokemon search(String inputName) {
         Pokemon pokemon = new Pokemon();
         TypeEnum typeEnum = new TypeEnum();
         try {
-            String SQL = "SELECT * FROM pokemondata WHERE name = '" + inputName + "'";
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            String SQL = "SELECT * FROM pokemon WHERE name = '" + inputName + "'";
+
+            Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(URL, USER, PW);
+
 
             st = con.prepareStatement(SQL);
             rs = st.executeQuery();
@@ -44,6 +48,29 @@ public class PokemonDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        System.out.println(pokemon.getId());
+        System.out.println(pokemon.getName());
+        System.out.println(pokemon.getType1());
         return pokemon;
+    }
+
+    public List allName() {
+        try {
+            allPokemonName = new ArrayList<>();
+            String SQL = "SELECT * FROM pokemon";
+            con = DriverManager.getConnection(URL, USER, PW);
+
+
+            st = con.prepareStatement(SQL);
+            rs = st.executeQuery();
+
+            while (rs.next()) {
+                allPokemonName.add(rs.getString(2));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return allPokemonName;
     }
 }
