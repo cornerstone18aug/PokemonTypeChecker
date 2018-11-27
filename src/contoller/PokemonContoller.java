@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -15,12 +16,14 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import model.Pokemon;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
 /**
  * Created by katayama on 2018/11/20.
  */
-public class PokemonContoller {
+public class PokemonContoller implements Initializable {
 
 
     @FXML
@@ -62,6 +65,14 @@ public class PokemonContoller {
     private Image weekLabelImg2;
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // display pokemon Name in ListView
+        List<String> nameAll = pdao.allName();
+        ObservableList<String> items = FXCollections.observableArrayList(nameAll);
+        pokemonList.setItems(items);
+    }
+
     @FXML
     void onSerchButton(ActionEvent event) {
 
@@ -86,11 +97,7 @@ public class PokemonContoller {
         label1.setImage(weekLabelImg1);
         label2.setImage(weekLabelImg2);
 
-        // display pokemon Name in ListView
-        List<String> nameAll = pdao.allName();
-        ObservableList<String> items = FXCollections.observableArrayList(nameAll);
-        pokemonList.setItems(items);
-        System.out.println(items);
+
     }
 
     @FXML
