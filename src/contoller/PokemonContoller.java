@@ -81,12 +81,18 @@ public class PokemonContoller implements Initializable {
 
         // search name from Database
         /////////
-        pokemon = pdao.search(inputName);
 
-        // write code to change view
-
-        display(pokemon);
-
+        if(inputName.equals("")) {
+            System.out.println("It's Empty");
+        } else {
+            pokemon = pdao.search(inputName);
+            if(pokemon.getId() == 0) {
+                System.out.println("It's Empty");
+            } else {
+                // write code to change view
+                display(pokemon);
+            }
+        }
 
         weekLabelImg1 = new Image("img/samplelabel1.png");
         weekLabelImg2 = new Image("img/samplelabel2.png");
@@ -108,8 +114,16 @@ public class PokemonContoller implements Initializable {
             String selectedItem = pokemonList.getSelectionModel().getSelectedItem();
             System.out.println(selectedItem);
 
-            pokemon =  pdao.search(selectedItem);
-            display(pokemon);
+            if(selectedItem.equals("")) {
+                System.out.println("It's Empty");
+            } else {
+                pokemon =  pdao.search(selectedItem);
+                if(pokemon.getId() == 0) {
+                    System.out.println("It's Empty");
+                } else {
+                    display(pokemon);
+                }
+            }
         }
     }
 
@@ -129,7 +143,6 @@ public class PokemonContoller implements Initializable {
 
 
         // check pokemon original type
-
         Image typeImg1 = new Image(typeImageURL(displayPokemon.getType1()));
         type_1Tag.setImage(typeImg1);
         if ((typeImageURL(displayPokemon.getType2())) == null) {
