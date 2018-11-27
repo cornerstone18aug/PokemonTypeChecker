@@ -17,9 +17,9 @@ public class PokemonDAO {
 
     private List<String> allPokemonName;
 
-    static String URL = "jdbc:mysql://localhost:3306/pokemonDB?useUnicode=true&characterEncoding=utf8";
+    static String URL = "jdbc:mysql://localhost:3306/pokemon?useUnicode=true&characterEncoding=utf8";
     static String USER = "root";
-    static String PW = "test";
+    static String PW = "30Snya21 ";
 
     public Pokemon search(String inputName) {
         Pokemon pokemon = new Pokemon();
@@ -27,7 +27,7 @@ public class PokemonDAO {
         try {
             String SQL = "SELECT * FROM pokemon WHERE name = '" + inputName + "'";
 
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(URL, USER, PW);
 
 
