@@ -3,14 +3,8 @@ package application;
 import contoller.PokemonContoller;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
-import javafx.scene.Group;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import model.Pokemon;
 
@@ -25,6 +19,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("samplepoke.fxml"));
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
+
 //        HBox hbox = new HBox();
 //        hbox.setAlignment(Pos.CENTER);
 //
