@@ -16,6 +16,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
 import model.Pokemon;
 
 import java.net.URL;
@@ -26,7 +27,6 @@ import java.util.ResourceBundle;
  * Created by katayama on 2018/11/20.
  */
 public class PokemonContoller implements Initializable {
-
 
     @FXML
     private TextField searchName;
@@ -58,14 +58,10 @@ public class PokemonContoller implements Initializable {
     @FXML
     private ImageView type_2Tag;
 
-
-
-
     private Pokemon pokemon;
     private PokemonDAO pdao = new PokemonDAO();
     private Image weekLabelImg1;
     private Image weekLabelImg2;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -126,7 +122,6 @@ public class PokemonContoller implements Initializable {
                 }
             }
         }
-
     }
 // add Enter function
   @FXML
@@ -171,7 +166,12 @@ public class PokemonContoller implements Initializable {
 
   @FXML
     void onRoarButtonclick(ActionEvent event) {
+        play_audio();
+    }
 
+    public void play_audio() {
+        AudioClip note = new AudioClip("file:src/sound/bulbasaur.wav");
+        note.play();
     }
 
     public void display(Pokemon displayPokemon) {
