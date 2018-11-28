@@ -1,5 +1,6 @@
 package contoller;
 
+import com.sun.glass.ui.CommonDialogs;
 import dao.PokemonDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,9 +16,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import model.Pokemon;
+import typeChecker.TypeCheckArray;
 
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
@@ -57,13 +61,10 @@ public class PokemonContoller implements Initializable {
     private ImageView type_2Tag;
 
 
-
-
     private Pokemon pokemon;
     private PokemonDAO pdao = new PokemonDAO();
     private Image weekLabelImg1;
     private Image weekLabelImg2;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -90,20 +91,13 @@ public class PokemonContoller implements Initializable {
                 System.out.println("It's Empty");
             } else {
                 // write code to change view
+                // TODO: fix display method
+                System.out.println("Not Empty");
                 display(pokemon);
+                printWeaknessTypes();
+
             }
         }
-
-        weekLabelImg1 = new Image("img/samplelabel1.png");
-        weekLabelImg2 = new Image("img/samplelabel2.png");
-
-
-//        pokemonImage.setImage(pokeImg);
-
-        label1.setImage(weekLabelImg1);
-        label2.setImage(weekLabelImg2);
-
-
     }
 
     @FXML
@@ -122,6 +116,7 @@ public class PokemonContoller implements Initializable {
                     System.out.println("It's Empty");
                 } else {
                     display(pokemon);
+
                 }
             }
         }
@@ -155,6 +150,18 @@ public class PokemonContoller implements Initializable {
         pokemonIdTag.setText("NO." + displayPokemonId);
         pokemonNameTag.setText(displayPokemonName);
         pokemonImage.setImage(bodyImg);
+
+    }
+
+    public void printWeaknessTypes() {
+        Map<String, Double> entry = TypeCheckArray.weaknesses("1", null);
+        System.out.println(entry.keySet());
+//        HashMap<Integer, String> n = new HashMap<>();
+//        n.put(1, "Hi");
+//        n.put(2, "Pokemon");
+//        for (Map.Entry<Integer, String> entry : n.entrySet()) {
+//            System.out.println(entry.getValue());
+//        }
     }
 
     public String typeImageURL(String type) {
@@ -219,7 +226,4 @@ public class PokemonContoller implements Initializable {
         }
         return imageUrl;
     }
-
-
-
 }
