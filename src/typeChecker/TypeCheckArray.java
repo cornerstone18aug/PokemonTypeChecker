@@ -423,7 +423,7 @@ public class TypeCheckArray {
         }
     }
 
-    public static void main(String[] args) {
-        printType("2", "3");
-    }
+//    public static void main(String[] args) {
+//        printType("2", "3");
+//    }
 }

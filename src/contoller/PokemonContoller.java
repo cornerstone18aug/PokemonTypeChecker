@@ -30,7 +30,6 @@ import java.util.ResourceBundle;
  */
 public class PokemonContoller implements Initializable {
 
-
     @FXML
     private TextField searchName;
 
@@ -61,14 +60,10 @@ public class PokemonContoller implements Initializable {
     @FXML
     private ImageView type_2Tag;
 
-
-
-
     private Pokemon pokemon;
     private PokemonDAO pdao = new PokemonDAO();
     private Image weekLabelImg1;
     private Image weekLabelImg2;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -109,7 +104,7 @@ public class PokemonContoller implements Initializable {
         label2.setImage(weekLabelImg2);
 
     }
-    
+
     @FXML
     void selectName(MouseEvent event) {
         boolean doubleClicked = event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2;
@@ -129,10 +124,9 @@ public class PokemonContoller implements Initializable {
                 }
             }
         }
-
     }
 // add Enter function
-@FXML
+  @FXML
   void onEnter(ActionEvent event) {
       String inputName = searchName.getText();
 
@@ -144,15 +138,42 @@ public class PokemonContoller implements Initializable {
           System.out.println("It's Invalid Name");
         } else {
           display(pokemon);
-        }
+          }
         }
       }
 
+  @FXML
+  void onEnterList(KeyEvent event) {
+    boolean pushedEnter = event.getCode().equals(KeyCode.ENTER);
+    if (pushedEnter) {
+      // show name in the TextField when push the enter key
+      String selectedItem = pokemonList.getSelectionModel().getSelectedItem();
+      System.out.println(selectedItem);
+
+      if(selectedItem.equals("")) {
+        System.out.println("It's Empty");
+      } else {
+        pokemon =  pdao.search(selectedItem);
+        if(pokemon.getId() == 0) {
+          System.out.println("It's Empty");
+        } else {
+           searchName.setText(selectedItem);
+          display(pokemon);
+        }
+      }
+    }
+
+  }
 
 
   @FXML
     void onRoarButtonclick(ActionEvent event) {
+        play_audio();
+    }
 
+    public void play_audio() {
+        AudioClip note = new AudioClip("file:src/sound/bulbasaur.wav");
+        note.play();
     }
 
     public void display(Pokemon displayPokemon) {
