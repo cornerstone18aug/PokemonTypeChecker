@@ -5,22 +5,27 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import model.Pokemon;
 
+import java.net.URL;
 import java.util.List;
+import java.util.ResourceBundle;
 
 /**
  * Created by katayama on 2018/11/20.
  */
-public class PokemonContoller {
+public class PokemonContoller implements Initializable {
 
 
     @FXML
@@ -62,20 +67,34 @@ public class PokemonContoller {
     private Image weekLabelImg2;
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // display pokemon Name in ListView
+        List<String> nameAll = pdao.allName();
+        ObservableList<String> items = FXCollections.observableArrayList(nameAll);
+        pokemonList.setItems(items);
+    }
+
     @FXML
-    void onSerchButton(ActionEvent event) {
+    void onSearchButton(ActionEvent event) {
 
         // get text from user input in search box
         String inputName = searchName.getText();
 
         // search name from Database
         /////////
-        pokemon = pdao.search(inputName);
 
-        // write code to change view
-
-        display(pokemon);
-
+        if(inputName.equals("")) {
+            System.out.println("It's Empty");
+        } else {
+            pokemon = pdao.search(inputName);
+            if(pokemon.getId() == 0) {
+                System.out.println("It's Empty");
+            } else {
+                // write code to change view
+                display(pokemon);
+            }
+        }
 
         weekLabelImg1 = new Image("img/samplelabel1.png");
         weekLabelImg2 = new Image("img/samplelabel2.png");
@@ -86,13 +105,8 @@ public class PokemonContoller {
         label1.setImage(weekLabelImg1);
         label2.setImage(weekLabelImg2);
 
-        // display pokemon Name in ListView
-        List<String> nameAll = pdao.allName();
-        ObservableList<String> items = FXCollections.observableArrayList(nameAll);
-        pokemonList.setItems(items);
-        System.out.println(items);
     }
-
+    
     @FXML
     void selectName(MouseEvent event) {
         boolean doubleClicked = event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2;
@@ -101,12 +115,39 @@ public class PokemonContoller {
             String selectedItem = pokemonList.getSelectionModel().getSelectedItem();
             System.out.println(selectedItem);
 
-            pokemon =  pdao.search(selectedItem);
-            display(pokemon);
+            if(selectedItem.equals("")) {
+                System.out.println("It's Empty");
+            } else {
+                pokemon =  pdao.search(selectedItem);
+                if(pokemon.getId() == 0) {
+                    System.out.println("It's Empty");
+                } else {
+                    display(pokemon);
+                }
+            }
         }
-    }
 
-    @FXML
+    }
+// add Enter function
+@FXML
+  void onEnter(ActionEvent event) {
+      String inputName = searchName.getText();
+
+      if(inputName.equals("")) {
+        System.out.println("It's Empty");
+      } else {
+        pokemon = pdao.search(inputName);
+        if(pokemon.getId() == 0) {
+          System.out.println("It's Invalid Name");
+        } else {
+          display(pokemon);
+        }
+        }
+      }
+
+
+
+  @FXML
     void onRoarButtonclick(ActionEvent event) {
 
     }
@@ -122,7 +163,6 @@ public class PokemonContoller {
 
 
         // check pokemon original type
-
         Image typeImg1 = new Image(typeImageURL(displayPokemon.getType1()));
         type_1Tag.setImage(typeImg1);
         if ((typeImageURL(displayPokemon.getType2())) == null) {
