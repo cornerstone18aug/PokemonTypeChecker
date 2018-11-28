@@ -19,7 +19,7 @@ public class PokemonDAO {
 
     static String URL = "jdbc:mysql://localhost:3306/pokemon?useUnicode=true&characterEncoding=utf8";
     static String USER = "root";
-    static String PW = "30Snya21 ";
+    static String PW = "30Snya21";
 
     public Pokemon search(String inputName) {
         Pokemon pokemon = new Pokemon();
