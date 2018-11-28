@@ -12,6 +12,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import model.Pokemon;
@@ -74,7 +76,7 @@ public class PokemonContoller implements Initializable {
     }
 
     @FXML
-    void onSerchButton(ActionEvent event) {
+    void onSearchButton(ActionEvent event) {
 
         // get text from user input in search box
         String inputName = searchName.getText();
@@ -103,9 +105,8 @@ public class PokemonContoller implements Initializable {
         label1.setImage(weekLabelImg1);
         label2.setImage(weekLabelImg2);
 
-
     }
-
+    
     @FXML
     void selectName(MouseEvent event) {
         boolean doubleClicked = event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2;
@@ -125,9 +126,28 @@ public class PokemonContoller implements Initializable {
                 }
             }
         }
-    }
 
-    @FXML
+    }
+// add Enter function
+@FXML
+  void onEnter(ActionEvent event) {
+      String inputName = searchName.getText();
+
+      if(inputName.equals("")) {
+        System.out.println("It's Empty");
+      } else {
+        pokemon = pdao.search(inputName);
+        if(pokemon.getId() == 0) {
+          System.out.println("It's Invalid Name");
+        } else {
+          display(pokemon);
+        }
+        }
+      }
+
+
+
+  @FXML
     void onRoarButtonclick(ActionEvent event) {
 
     }
