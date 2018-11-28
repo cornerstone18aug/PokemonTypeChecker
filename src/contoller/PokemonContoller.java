@@ -1,5 +1,6 @@
 package contoller;
 
+
 import dao.PokemonDAO;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,8 +15,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.AudioClip;
 import model.Pokemon;
 
+import java.io.File;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -74,7 +77,7 @@ public class PokemonContoller implements Initializable {
     }
 
     @FXML
-    void onSerchButton(ActionEvent event) {
+    void onSearchButton(ActionEvent event) {
 
         // get text from user input in search box
         String inputName = searchName.getText();
