@@ -18,9 +18,12 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
 import model.Pokemon;
+import typeChecker.TypeCheckArray;
 
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 /**
@@ -92,14 +95,14 @@ public class PokemonContoller implements Initializable {
             }
         }
 
-        weekLabelImg1 = new Image("img/samplelabel1.png");
-        weekLabelImg2 = new Image("img/samplelabel2.png");
+//        weekLabelImg1 = new Image("img/samplelabel1.png");
+//        weekLabelImg2 = new Image("img/samplelabel2.png");
 
 
 //        pokemonImage.setImage(pokeImg);
 
-        label1.setImage(weekLabelImg1);
-        label2.setImage(weekLabelImg2);
+//        label1.setImage(weekLabelImg1);
+//        label2.setImage(weekLabelImg2);
 
     }
 
@@ -197,6 +200,16 @@ public class PokemonContoller implements Initializable {
         pokemonIdTag.setText("NO." + displayPokemonId);
         pokemonNameTag.setText(displayPokemonName);
         pokemonImage.setImage(bodyImg);
+    }
+
+    public void printWeaknessTypes(Pokemon pokemon) {
+        Image weaknessType = new Image(typeImageURL());
+        Map<String, Double> weakness = TypeCheckArray.weaknesses(pokemon.getType1(), pokemon.getType2());
+        for(Map.Entry<String, Double> weakenesses : weakness.entrySet()) {
+            if (weakenesses.getValue().equals(4.0)) {
+                label1.setImage(weaknessType);
+            }
+        }
     }
 
     public String typeImageURL(String type) {
