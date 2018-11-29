@@ -21,10 +21,7 @@ import model.Pokemon;
 import typeChecker.TypeCheckArray;
 
 import java.net.URL;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Created by katayama on 2018/11/20.
@@ -200,12 +197,12 @@ public class PokemonContoller implements Initializable {
 
     public void printWeaknessTypes(Pokemon pokemon) {
        Map<String, Double> weakness = TypeCheckArray.weaknesses(pokemon.getType1(), pokemon.getType2());
-        System.out.println(pokemon.getType2());
         for(Map.Entry<String, Double> weakenesses : weakness.entrySet()) {
             if(weakenesses.getValue().equals(4.0)) {
                 Image weaknessType = new Image(typeImageURL(weakenesses.getKey()));
                 label1.setImage(weaknessType);
             }
+            // Add more for 2.0, 0.5 and 0.25
         }
     }
 
