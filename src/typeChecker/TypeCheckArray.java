@@ -397,7 +397,7 @@ public class TypeCheckArray {
         Map<String, Double> pokemons = pokemonTypes.get(m);
         Map<String, Double> pokemons2 = pokemonTypes.get(n);
         Map<String, Double> pokemons3 = new HashMap<>(pokemons);
-        if (n == null) {
+        if (n.equals("0")) {
             return pokemons;
         } else {
             pokemons2.forEach((k, v) -> pokemons3.merge(k, v, (v1, v2) -> v1 * v2));

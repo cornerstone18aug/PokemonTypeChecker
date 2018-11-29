@@ -60,10 +60,116 @@ public class PokemonContoller implements Initializable {
     @FXML
     private ImageView type_2Tag;
 
+    @FXML
+    private ImageView fourTimeslabel1;
+    @FXML
+    private ImageView fourTimeslabel2;
+    @FXML
+    private ImageView fourTimeslabel3;
+    @FXML
+    private ImageView fourTimeslabel4;
+    @FXML
+    private ImageView fourTimeslabel5;
+    @FXML
+    private ImageView fourTimeslabel6;
+    @FXML
+    private ImageView fourTimeslabel7;
+    @FXML
+    private ImageView fourTimeslabel8;
+    @FXML
+    private ImageView fourTimeslabel9;
+    @FXML
+    private ImageView fourTimeslabel10;
+    @FXML
+    private ImageView twoTimeslabel1;
+    @FXML
+    private ImageView twoTimeslabel2;
+    @FXML
+    private ImageView twoTimeslabel3;
+    @FXML
+    private ImageView twoTimeslabel4;
+    @FXML
+    private ImageView twoTimeslabel5;
+    @FXML
+    private ImageView twoTimeslabel6;
+    @FXML
+    private ImageView twoTimeslabel7;
+    @FXML
+    private ImageView twoTimeslabel8;
+    @FXML
+    private ImageView twoTimeslabel9;
+    @FXML
+    private ImageView twoTimeslabel10;
+    @FXML
+    private ImageView halfTimeslabel1;
+    @FXML
+    private ImageView halfTimeslabel2;
+    @FXML
+    private ImageView halfTimeslabel3;
+    @FXML
+    private ImageView halfTimeslabel4;
+    @FXML
+    private ImageView halfTimeslabel5;
+    @FXML
+    private ImageView halfTimeslabel6;
+    @FXML
+    private ImageView halfTimeslabel7;
+    @FXML
+    private ImageView halfTimeslabel8;
+    @FXML
+    private ImageView halfTimeslabel9;
+    @FXML
+    private ImageView halfTimeslabel10;
+    @FXML
+    private ImageView quarterTimeslabel1;
+    @FXML
+    private ImageView quarterTimeslabel2;
+    @FXML
+    private ImageView quarterTimeslabel3;
+    @FXML
+    private ImageView quarterTimeslabel4;
+    @FXML
+    private ImageView quarterTimeslabel5;
+    @FXML
+    private ImageView quarterTimeslabel6;
+    @FXML
+    private ImageView quarterTimeslabel7;
+    @FXML
+    private ImageView quarterTimeslabel8;
+    @FXML
+    private ImageView quarterTimeslabel9;
+    @FXML
+    private ImageView quarterTimeslabel10;
+    @FXML
+    private ImageView nonelabel1;
+    @FXML
+    private ImageView nonelabel2;
+    @FXML
+    private ImageView nonelabel3;
+    @FXML
+    private ImageView nonelabel4;
+    @FXML
+    private ImageView nonelabel5;
+    @FXML
+    private ImageView nonelabel6;
+    @FXML
+    private ImageView nonelabel7;
+    @FXML
+    private ImageView nonelabel8;
+    @FXML
+    private ImageView nonelabel9;
+    @FXML
+    private ImageView nonelabel10;
+
+
+
     private Pokemon pokemon;
     private PokemonDAO pdao = new PokemonDAO();
-    private Image weekLabelImg1;
-    private Image weekLabelImg2;
+    private List<ImageView> fourWeelknessLabellist;
+    private List<ImageView> twoWeelknessLabellist;
+    private List<ImageView> halfWeelknessLabellist;
+    private List<ImageView> quarterWeelknessLabellist;
+    private List<ImageView> noneWeelknessLabellist;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -71,6 +177,69 @@ public class PokemonContoller implements Initializable {
         List<String> nameAll = pdao.allName();
         ObservableList<String> items = FXCollections.observableArrayList(nameAll);
         pokemonList.setItems(items);
+
+
+        fourWeelknessLabellist = new ArrayList<>();
+        fourWeelknessLabellist.add(fourTimeslabel1);
+        fourWeelknessLabellist.add(fourTimeslabel2);
+        fourWeelknessLabellist.add(fourTimeslabel3);
+        fourWeelknessLabellist.add(fourTimeslabel4);
+        fourWeelknessLabellist.add(fourTimeslabel5);
+        fourWeelknessLabellist.add(fourTimeslabel6);
+        fourWeelknessLabellist.add(fourTimeslabel7);
+        fourWeelknessLabellist.add(fourTimeslabel8);
+        fourWeelknessLabellist.add(fourTimeslabel9);
+        fourWeelknessLabellist.add(fourTimeslabel10);
+
+        twoWeelknessLabellist = new ArrayList<>();
+        twoWeelknessLabellist.add(twoTimeslabel1);
+        twoWeelknessLabellist.add(twoTimeslabel2);
+        twoWeelknessLabellist.add(twoTimeslabel3);
+        twoWeelknessLabellist.add(twoTimeslabel4);
+        twoWeelknessLabellist.add(twoTimeslabel5);
+        twoWeelknessLabellist.add(twoTimeslabel6);
+        twoWeelknessLabellist.add(twoTimeslabel7);
+        twoWeelknessLabellist.add(twoTimeslabel8);
+        twoWeelknessLabellist.add(twoTimeslabel9);
+        twoWeelknessLabellist.add(twoTimeslabel10);
+
+        halfWeelknessLabellist = new ArrayList<>();
+        halfWeelknessLabellist.add(halfTimeslabel1);
+        halfWeelknessLabellist.add(halfTimeslabel2);
+        halfWeelknessLabellist.add(halfTimeslabel3);
+        halfWeelknessLabellist.add(halfTimeslabel4);
+        halfWeelknessLabellist.add(halfTimeslabel5);
+        halfWeelknessLabellist.add(halfTimeslabel6);
+        halfWeelknessLabellist.add(halfTimeslabel7);
+        halfWeelknessLabellist.add(halfTimeslabel8);
+        halfWeelknessLabellist.add(halfTimeslabel9);
+        halfWeelknessLabellist.add(halfTimeslabel10);
+
+        quarterWeelknessLabellist = new ArrayList<>();
+        quarterWeelknessLabellist.add(quarterTimeslabel1);
+        quarterWeelknessLabellist.add(quarterTimeslabel2);
+        quarterWeelknessLabellist.add(quarterTimeslabel3);
+        quarterWeelknessLabellist.add(quarterTimeslabel4);
+        quarterWeelknessLabellist.add(quarterTimeslabel5);
+        quarterWeelknessLabellist.add(quarterTimeslabel6);
+        quarterWeelknessLabellist.add(quarterTimeslabel7);
+        quarterWeelknessLabellist.add(quarterTimeslabel8);
+        quarterWeelknessLabellist.add(quarterTimeslabel9);
+        quarterWeelknessLabellist.add(quarterTimeslabel10);
+
+        noneWeelknessLabellist = new ArrayList<>();
+        noneWeelknessLabellist.add(nonelabel1);
+        noneWeelknessLabellist.add(nonelabel2);
+        noneWeelknessLabellist.add(nonelabel3);
+        noneWeelknessLabellist.add(nonelabel4);
+        noneWeelknessLabellist.add(nonelabel5);
+        noneWeelknessLabellist.add(nonelabel6);
+        noneWeelknessLabellist.add(nonelabel7);
+        noneWeelknessLabellist.add(nonelabel8);
+        noneWeelknessLabellist.add(nonelabel9);
+        noneWeelknessLabellist.add(nonelabel10);
+        System.out.println("none");
+
     }
 
     @FXML
@@ -103,7 +272,6 @@ public class PokemonContoller implements Initializable {
         if (doubleClicked) {
             // write code when name double is double-clicked in ListView
             String selectedItem = pokemonList.getSelectionModel().getSelectedItem();
-            System.out.println(selectedItem);
 
             if(selectedItem.equals("")) {
                 System.out.println("It's Empty");
@@ -114,12 +282,11 @@ public class PokemonContoller implements Initializable {
                 } else {
                     display(pokemon);
                     printWeaknessTypes(pokemon);
-
                 }
             }
         }
     }
-// add Enter function
+
   @FXML
   void onEnter(ActionEvent event) {
       String inputName = searchName.getText();
@@ -152,7 +319,6 @@ public class PokemonContoller implements Initializable {
         if(pokemon.getId() == 0) {
           System.out.println("It's Empty");
         } else {
-           searchName.setText(selectedItem);
           display(pokemon);
           printWeaknessTypes(pokemon);
         }
@@ -182,7 +348,6 @@ public class PokemonContoller implements Initializable {
 
         // check pokemon original type
         Image typeImg1 = new Image(typeImageURL(displayPokemon.getType1()));
-        System.out.println(typeImageURL(displayPokemon.getType1()));
         type_1Tag.setImage(typeImg1);
         if ((typeImageURL(displayPokemon.getType2())) == null) {
             type_2Tag.imageProperty().set(null);
@@ -194,18 +359,101 @@ public class PokemonContoller implements Initializable {
         pokemonIdTag.setText("NO." + displayPokemonId);
         pokemonNameTag.setText(displayPokemonName);
         pokemonImage.setImage(bodyImg);
+        searchName.setText(displayPokemonName);
     }
+
+
 
     public void printWeaknessTypes(Pokemon pokemon) {
        Map<String, Double> weakness = TypeCheckArray.weaknesses(pokemon.getType1(), pokemon.getType2());
+
+        List<Image> fourTimesList = new ArrayList<>();
+        List<Image> twoTimesList = new ArrayList<>();
+        List<Image> halfTimesList = new ArrayList<>();
+        List<Image> quarterTimesList = new ArrayList<>();
+        List<Image> noneTimesList = new ArrayList<>();
+
         for(Map.Entry<String, Double> weakenesses : weakness.entrySet()) {
             if(weakenesses.getValue().equals(4.0)) {
-                Image weaknessType = new Image(typeImageURL(weakenesses.getKey()));
-                label1.setImage(weaknessType);
+                Image weaknessTypeFour = new Image(typeImageURL(weakenesses.getKey()));
+                fourTimesList.add(weaknessTypeFour);
+            } else if (weakenesses.getValue().equals(2.0)) {
+                Image weaknessTypeTwo = new Image(typeImageURL(weakenesses.getKey()));
+                twoTimesList.add(weaknessTypeTwo);
+            } else if (weakenesses.getValue().equals(0.5)) {
+                Image weaknessTypeHalf = new Image(typeImageURL(weakenesses.getKey()));
+                halfTimesList.add(weaknessTypeHalf);
+            } else if (weakenesses.getValue().equals(0.25)) {
+                Image weaknessTypeQuarter = new Image(typeImageURL(weakenesses.getKey()));
+                quarterTimesList.add(weaknessTypeQuarter);
+            } else if (weakenesses.getValue().equals(0)) {
+                Image weaknessTypeNone = new Image(typeImageURL(weakenesses.getKey()));
+                noneTimesList.add(weaknessTypeNone);
             }
-            // Add more for 2.0, 0.5 and 0.25
         }
+        int labelFourIndex = 0;
+        int listFourIndex = 0;
+        while (labelFourIndex < fourWeelknessLabellist.size()) {
+            if (listFourIndex >= fourTimesList.size()) {
+                fourWeelknessLabellist.get(labelFourIndex).setImage(null);
+                labelFourIndex++;
+            } else {
+                fourWeelknessLabellist.get(labelFourIndex).setImage(fourTimesList.get(listFourIndex));
+                labelFourIndex++;
+                listFourIndex++;
+            }
+        }
+        int labelTwoIndex = 0;
+        int listTwoIndex = 0;
+        while (labelTwoIndex < twoWeelknessLabellist.size()) {
+            if (listTwoIndex >= twoTimesList.size()) {
+                twoWeelknessLabellist.get(labelTwoIndex).setImage(null);
+                labelTwoIndex++;
+            } else {
+                twoWeelknessLabellist.get(labelTwoIndex).setImage(twoTimesList.get(listTwoIndex));
+                labelTwoIndex++;
+                listTwoIndex++;
+            }
+        }
+        int labelHalfIndex = 0;
+        int listHalfIndex = 0;
+        while (labelHalfIndex < halfWeelknessLabellist.size()) {
+            if (listHalfIndex >= halfTimesList.size()) {
+                halfWeelknessLabellist.get(labelHalfIndex).setImage(null);
+                labelHalfIndex++;
+            } else {
+                halfWeelknessLabellist.get(labelHalfIndex).setImage(halfTimesList.get(listHalfIndex));
+                labelHalfIndex++;
+                listHalfIndex++;
+            }
+        }
+        int labelQuarterIndex = 0;
+        int listQuarterIndex = 0;
+        while (labelQuarterIndex < quarterWeelknessLabellist.size()) {
+            if (listQuarterIndex >= quarterTimesList.size()) {
+                quarterWeelknessLabellist.get(labelQuarterIndex).setImage(null);
+                labelQuarterIndex++;
+            } else {
+                quarterWeelknessLabellist.get(labelQuarterIndex).setImage(quarterTimesList.get(listQuarterIndex));
+                labelQuarterIndex++;
+                listQuarterIndex++;
+            }
+        }
+        int labelNoneIndex = 0;
+        int listNoneIndex = 0;
+        while (labelNoneIndex < noneWeelknessLabellist.size()) {
+            if (listNoneIndex >= noneTimesList.size()) {
+                noneWeelknessLabellist.get(labelNoneIndex).setImage(null);
+                labelNoneIndex++;
+            } else {
+                noneWeelknessLabellist.get(labelNoneIndex).setImage(noneTimesList.get(listNoneIndex));
+                labelNoneIndex++;
+                listNoneIndex++;
+            }
+        }
+
     }
+
 
     public String typeImageURL(String type) {
         String imageUrl;
