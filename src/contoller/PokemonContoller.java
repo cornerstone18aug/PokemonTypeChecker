@@ -19,11 +19,11 @@ import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.AudioClip;
 import model.Pokemon;
+import typeChecker.TypeCheckArray;
 
 import java.io.File;
 import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Created by katayama on 2018/11/20.
@@ -91,17 +91,9 @@ public class PokemonContoller implements Initializable {
             } else {
                 // write code to change view
                 display(pokemon);
+                printWeaknessTypes(pokemon);
             }
         }
-
-        weekLabelImg1 = new Image("img/samplelabel1.png");
-        weekLabelImg2 = new Image("img/samplelabel2.png");
-
-
-//        pokemonImage.setImage(pokeImg);
-
-        label1.setImage(weekLabelImg1);
-        label2.setImage(weekLabelImg2);
 
     }
 
@@ -121,6 +113,7 @@ public class PokemonContoller implements Initializable {
                     System.out.println("It's Empty");
                 } else {
                     display(pokemon);
+                    printWeaknessTypes(pokemon);
 
                 }
             }
@@ -139,6 +132,7 @@ public class PokemonContoller implements Initializable {
           System.out.println("It's Invalid Name");
         } else {
           display(pokemon);
+          printWeaknessTypes(pokemon);
           }
         }
       }
@@ -160,6 +154,7 @@ public class PokemonContoller implements Initializable {
         } else {
            searchName.setText(selectedItem);
           display(pokemon);
+          printWeaknessTypes(pokemon);
         }
       }
     }
@@ -187,6 +182,7 @@ public class PokemonContoller implements Initializable {
 
         // check pokemon original type
         Image typeImg1 = new Image(typeImageURL(displayPokemon.getType1()));
+        System.out.println(typeImageURL(displayPokemon.getType1()));
         type_1Tag.setImage(typeImg1);
         if ((typeImageURL(displayPokemon.getType2())) == null) {
             type_2Tag.imageProperty().set(null);
@@ -200,60 +196,89 @@ public class PokemonContoller implements Initializable {
         pokemonImage.setImage(bodyImg);
     }
 
+    public void printWeaknessTypes(Pokemon pokemon) {
+       Map<String, Double> weakness = TypeCheckArray.weaknesses(pokemon.getType1(), pokemon.getType2());
+        for(Map.Entry<String, Double> weakenesses : weakness.entrySet()) {
+            if(weakenesses.getValue().equals(4.0)) {
+                Image weaknessType = new Image(typeImageURL(weakenesses.getKey()));
+                label1.setImage(weaknessType);
+            }
+            // Add more for 2.0, 0.5 and 0.25
+        }
+    }
+
     public String typeImageURL(String type) {
         String imageUrl;
         switch (type) {
+            case "1":
             case "Normal":
                 imageUrl = "img/nomal.png";
                 break;
+            case "2":
             case "Grass":
                 imageUrl = "img/grass.png";
                 break;
+            case "3":
             case "Water":
                 imageUrl = "img/water.png";
                 break;
+            case "4":
             case "Fire":
                 imageUrl = "img/fire.png";
                 break;
+            case "5":
             case "Electric":
                 imageUrl = "img/electric.png";
                 break;
+            case "6":
             case "Fighting":
                 imageUrl = "img/fighting.png";
                 break;
+            case "7":
             case "Flying":
                 imageUrl = "img/flying.png";
                 break;
+            case "8":
             case "Ground":
                 imageUrl = "img/ground.png";
                 break;
+            case "9":
             case "Rock":
                 imageUrl = "img/rock.png";
                 break;
+            case "10":
             case "Dark":
                 imageUrl = "img/dark.png";
                 break;
+            case "11":
             case "Ghost":
                 imageUrl = "img/ghost.png";
                 break;
+            case "12":
             case "Bug":
                 imageUrl = "img/bug.png";
                 break;
+            case "13":
             case "Dragon":
                 imageUrl = "img/dragon.png";
                 break;
+            case "14":
             case "Ice":
                 imageUrl = "img/ice.png";
                 break;
+            case "15":
             case "Steel":
                 imageUrl = "img/steel.png";
                 break;
+            case "16":
             case "Fairy":
                 imageUrl = "img/fairy.png";
                 break;
+            case "17":
             case "Poison":
                 imageUrl = "img/poison.png";
                 break;
+            case "18":
             case "Phychic":
                 imageUrl = "img/phychic.png";
                 break;

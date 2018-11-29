@@ -11,7 +11,7 @@ public class TypeCheckArray {
      * 11. Ghost    12. Bug    13. Dragon 14. Ice  15. Steel
      * 16. Fairy    17. Poison 18. Phychic
      * */
-    private static HashMap<String, HashMap<String, Double>> pokemonTypes = new HashMap<>();
+    private static Map<String, HashMap<String, Double>> pokemonTypes = new HashMap<>();
 
     static {
         // Normal Type
@@ -393,37 +393,15 @@ public class TypeCheckArray {
         pokemonTypes.get("18").put("Phychic", 0.5);
     }
 
-//    public static void printType(int n) {
-//        HashMap<String, Double> pokemons = pokemonTypes.get(n);
-//        for (Map.Entry<String, Double> pokemon: pokemons.entrySet()) {
-//            if (pokemon.getValue() != 1.0) {
-//                System.out.println(pokemon);
-//            }
-//        }
-//    }
-
-    public static void printType(String m, String n) {
-        HashMap<String, Double> pokemons = pokemonTypes.get(m);
-        HashMap<String, Double> pokemons2 = pokemonTypes.get(n);
+    public static Map<String, Double> weaknesses(String m, String n) {
+        Map<String, Double> pokemons = pokemonTypes.get(m);
+        Map<String, Double> pokemons2 = pokemonTypes.get(n);
+        Map<String, Double> pokemons3 = new HashMap<>(pokemons);
         if (n == null) {
-            for (Map.Entry<String, Double> pokemon : pokemons.entrySet()) {
-                if (pokemon.getValue() != 1.0) {
-                    System.out.println(pokemon);
-                }
-            }
+            return pokemons;
         } else {
-            HashMap<String, Double> pokemons3;
-            pokemons3 = new HashMap<>(pokemons);
             pokemons2.forEach((k, v) -> pokemons3.merge(k, v, (v1, v2) -> v1 * v2));
-            for (Map.Entry<String, Double> pokemon3 : pokemons3.entrySet()) {
-                if (pokemon3.getValue() != 1.0) {
-                    System.out.println(pokemon3);
-                }
-            }
+            return pokemons3;
         }
     }
-
-//    public static void main(String[] args) {
-//        printType("2", "3");
-//    }
 }
