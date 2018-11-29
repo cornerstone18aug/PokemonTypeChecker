@@ -92,17 +92,9 @@ public class PokemonContoller implements Initializable {
             } else {
                 // write code to change view
                 display(pokemon);
+                printWeaknessTypes(pokemon);
             }
         }
-
-//        weekLabelImg1 = new Image("img/samplelabel1.png");
-//        weekLabelImg2 = new Image("img/samplelabel2.png");
-
-
-//        pokemonImage.setImage(pokeImg);
-
-//        label1.setImage(weekLabelImg1);
-//        label2.setImage(weekLabelImg2);
 
     }
 
@@ -140,6 +132,7 @@ public class PokemonContoller implements Initializable {
           System.out.println("It's Invalid Name");
         } else {
           display(pokemon);
+          printWeaknessTypes(pokemon);
           }
         }
       }
@@ -161,6 +154,7 @@ public class PokemonContoller implements Initializable {
         } else {
            searchName.setText(selectedItem);
           display(pokemon);
+          printWeaknessTypes(pokemon);
         }
       }
     }
