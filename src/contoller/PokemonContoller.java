@@ -119,6 +119,7 @@ public class PokemonContoller implements Initializable {
                     System.out.println("It's Empty");
                 } else {
                     display(pokemon);
+
                 }
             }
         }
@@ -163,15 +164,13 @@ public class PokemonContoller implements Initializable {
 
   }
 
-
   @FXML
     void onRoarButtonclick(ActionEvent event) {
-        play_audio();
-    }
-
-    public void play_audio() {
-        AudioClip note = new AudioClip("file:src/sound/bulbasaur.wav");
-        note.play();
+      String selectedItem = pokemonList.getSelectionModel().getSelectedItem();
+      pokemon =  pdao.search(selectedItem);
+      String roarPath = "file:src/" + pokemon.getRoar();
+      AudioClip note = new AudioClip(roarPath);
+      note.play();
     }
 
     public void display(Pokemon displayPokemon) {
