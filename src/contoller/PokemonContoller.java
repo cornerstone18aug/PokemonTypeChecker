@@ -199,6 +199,22 @@ public class PokemonContoller implements Initializable {
 
         // set background color
         String type = displayPokemon.getType1();
+        setBackgroundColor(type);
+
+    }
+
+    public void printWeaknessTypes(Pokemon pokemon) {
+       Map<String, Double> weakness = TypeCheckArray.weaknesses(pokemon.getType1(), pokemon.getType2());
+        for(Map.Entry<String, Double> weakenesses : weakness.entrySet()) {
+            if(weakenesses.getValue().equals(4.0)) {
+                Image weaknessType = new Image(typeImageURL(weakenesses.getKey()));
+                label1.setImage(weaknessType);
+            }
+            // Add more for 2.0, 0.5 and 0.25
+        }
+    }
+
+    public void setBackgroundColor(String type) {
         switch (type) {
             case "1":
                 background2.setStyle("-fx-background-color:linear-gradient(#FFFFFF, #CCCCCC, #AAAAAA);");
@@ -259,23 +275,12 @@ public class PokemonContoller implements Initializable {
         }
     }
 
-    public void printWeaknessTypes(Pokemon pokemon) {
-       Map<String, Double> weakness = TypeCheckArray.weaknesses(pokemon.getType1(), pokemon.getType2());
-        for(Map.Entry<String, Double> weakenesses : weakness.entrySet()) {
-            if(weakenesses.getValue().equals(4.0)) {
-                Image weaknessType = new Image(typeImageURL(weakenesses.getKey()));
-                label1.setImage(weaknessType);
-            }
-            // Add more for 2.0, 0.5 and 0.25
-        }
-    }
-
     public String typeImageURL(String type) {
         String imageUrl;
         switch (type) {
             case "1":
             case "Normal":
-                imageUrl = "img/nomal.png";
+                imageUrl = "img/nomal_label.png";
                 break;
             case "2":
             case "Grass":
@@ -283,7 +288,7 @@ public class PokemonContoller implements Initializable {
                 break;
             case "3":
             case "Water":
-                imageUrl = "img/water.png";
+                imageUrl = "img/water_label.png";
                 break;
             case "4":
             case "Fire":
@@ -291,11 +296,11 @@ public class PokemonContoller implements Initializable {
                 break;
             case "5":
             case "Electric":
-                imageUrl = "img/electric.png";
+                imageUrl = "img/electric_label.png";
                 break;
             case "6":
             case "Fighting":
-                imageUrl = "img/fighting.png";
+                imageUrl = "img/fighting_label.png";
                 break;
             case "7":
             case "Flying":
@@ -303,7 +308,7 @@ public class PokemonContoller implements Initializable {
                 break;
             case "8":
             case "Ground":
-                imageUrl = "img/ground.png";
+                imageUrl = "img/ground-label.png";
                 break;
             case "9":
             case "Rock":
@@ -311,31 +316,31 @@ public class PokemonContoller implements Initializable {
                 break;
             case "10":
             case "Dark":
-                imageUrl = "img/dark.png";
+                imageUrl = "img/dark_label.png";
                 break;
             case "11":
             case "Ghost":
-                imageUrl = "img/ghost.png";
+                imageUrl = "img/ghost_label.png";
                 break;
             case "12":
             case "Bug":
-                imageUrl = "img/bug.png";
+                imageUrl = "img/bug_label.png";
                 break;
             case "13":
             case "Dragon":
-                imageUrl = "img/dragon.png";
+                imageUrl = "img/dragon_label.png";
                 break;
             case "14":
             case "Ice":
-                imageUrl = "img/ice.png";
+                imageUrl = "img/ice_label.png";
                 break;
             case "15":
             case "Steel":
-                imageUrl = "img/steel.png";
+                imageUrl = "img/steel_label.png";
                 break;
             case "16":
             case "Fairy":
-                imageUrl = "img/fairy.png";
+                imageUrl = "img/fairy_label.png";
                 break;
             case "17":
             case "Poison":
@@ -343,7 +348,7 @@ public class PokemonContoller implements Initializable {
                 break;
             case "18":
             case "Phychic":
-                imageUrl = "img/phychic.png";
+                imageUrl = "img/phychic_label.png";
                 break;
             default:
                 imageUrl = null;
