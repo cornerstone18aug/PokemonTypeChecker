@@ -279,7 +279,7 @@ public class PokemonContoller implements Initializable {
                 break;
             case "2":
             case "Grass":
-                imageUrl = "img/grass.png";
+                imageUrl = "img/grass_label.png";
                 break;
             case "3":
             case "Water":
@@ -287,7 +287,7 @@ public class PokemonContoller implements Initializable {
                 break;
             case "4":
             case "Fire":
-                imageUrl = "img/fire.png";
+                imageUrl = "img/fire_label.png";
                 break;
             case "5":
             case "Electric":
@@ -299,7 +299,7 @@ public class PokemonContoller implements Initializable {
                 break;
             case "7":
             case "Flying":
-                imageUrl = "img/flying.png";
+                imageUrl = "img/flying_label.png";
                 break;
             case "8":
             case "Ground":
@@ -307,7 +307,7 @@ public class PokemonContoller implements Initializable {
                 break;
             case "9":
             case "Rock":
-                imageUrl = "img/rock.png";
+                imageUrl = "img/rock_label.png";
                 break;
             case "10":
             case "Dark":
@@ -339,7 +339,7 @@ public class PokemonContoller implements Initializable {
                 break;
             case "17":
             case "Poison":
-                imageUrl = "img/poison.png";
+                imageUrl = "img/poison_label.png";
                 break;
             case "18":
             case "Phychic":
