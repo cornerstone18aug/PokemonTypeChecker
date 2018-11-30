@@ -267,7 +267,6 @@ public class PokemonContoller implements Initializable {
                 printWeaknessTypes(pokemon);
             }
         }
-
     }
 
     @FXML
