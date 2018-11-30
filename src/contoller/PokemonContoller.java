@@ -17,6 +17,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.AudioClip;
 import model.Pokemon;
 import typeChecker.TypeCheckArray;
@@ -32,6 +33,9 @@ public class PokemonContoller implements Initializable {
 
     @FXML
     private TextField searchName;
+
+    @FXML
+    private AnchorPane background2;
 
     @FXML
     private ListView<String> pokemonList;
@@ -194,6 +198,11 @@ public class PokemonContoller implements Initializable {
         pokemonIdTag.setText("NO." + displayPokemonId);
         pokemonNameTag.setText(displayPokemonName);
         pokemonImage.setImage(bodyImg);
+
+        // set background color
+        String type = displayPokemon.getType1();
+        setBackgroundColor(type);
+
     }
 
     public void printWeaknessTypes(Pokemon pokemon) {
@@ -207,80 +216,141 @@ public class PokemonContoller implements Initializable {
         }
     }
 
+    public void setBackgroundColor(String type) {
+        switch (type) {
+            case "1":
+                background2.setStyle("-fx-background-color:linear-gradient(#FFFFFF, #CCCCCC, #AAAAAA);");
+                break;
+            case "2":
+                background2.setStyle("-fx-background-color:linear-gradient(#D8FFDA, #91DEB8, #6FE5C5);");
+                break;
+            case "3":
+                background2.setStyle("-fx-background-color:linear-gradient(#C7ECFF, #5FB3E0, #66ABE6);");
+                break;
+            case "4":
+                background2.setStyle("-fx-background-color:linear-gradient(#FFCEC7, #EB8274, #FA8063);");
+                break;
+            case "5":
+                background2.setStyle("-fx-background-color:linear-gradient(#FFFDC7, #E5D76B, #E2DC5A);");
+                break;
+            case "6":
+                background2.setStyle("-fx-background-color:linear-gradient(#F4CECE, #ED7B7B, #D54141);");
+                break;
+            case "7":
+                background2.setStyle("-fx-background-color:linear-gradient(#D7E3FA, #8EA5F0, #708FF7);");
+                break;
+            case "8":
+                background2.setStyle("-fx-background-color:linear-gradient(#F0E0C2, #EABF6D, #D0A739);");
+                break;
+            case "9":
+                background2.setStyle("-fx-background-color:linear-gradient(#FAF2D5, #C4AC6C, #BCA66A);");
+                break;
+            case "10":
+                background2.setStyle("-fx-background-color:linear-gradient(#A2A2A2, #4E4E4E, #222222);");
+                break;
+            case "11":
+                background2.setStyle("-fx-background-color:linear-gradient(#EFD5FA, #B68FC7, #8B6B9A);");
+                break;
+            case "12":
+                background2.setStyle("-fx-background-color:linear-gradient(#ECF8C5, #9ECC47, #A7BC51);");
+                break;
+            case "13":
+                background2.setStyle("-fx-background-color:linear-gradient(#D5DEFA, #4B6DDD, #363BAA);");
+                break;
+            case "14":
+                background2.setStyle("-fx-background-color:linear-gradient(#D3FDF5, #7BEDD3, #41D5C3);");
+                break;
+            case "15":
+                background2.setStyle("-fx-background-color:linear-gradient(#AAC0C7, #487C8D, #294953);");
+                break;
+            case "16":
+                background2.setStyle("-fx-background-color:linear-gradient(#FEE8FF, #DCA2DE, #E48FE8);");
+                break;
+            case "17":
+                background2.setStyle("-fx-background-color:linear-gradient(#E8CEF4, #BD7BED, #A241D5);");
+                break;
+            case "18":
+                background2.setStyle("-fx-background-color:linear-gradient(#FAD7E4, #F77FAD, #F45B90);");
+                break;
+            default:
+                background2.setStyle("-fx-background-color: grey;");
+        }
+    }
+
     public String typeImageURL(String type) {
         String imageUrl;
         switch (type) {
             case "1":
             case "Normal":
-                imageUrl = "img/nomal.png";
+                imageUrl = "img/nomal_label.png";
                 break;
             case "2":
             case "Grass":
-                imageUrl = "img/grass.png";
+                imageUrl = "img/grass_label.png";
                 break;
             case "3":
             case "Water":
-                imageUrl = "img/water.png";
+                imageUrl = "img/water_label.png";
                 break;
             case "4":
             case "Fire":
-                imageUrl = "img/fire.png";
+                imageUrl = "img/fire_label.png";
                 break;
             case "5":
             case "Electric":
-                imageUrl = "img/electric.png";
+                imageUrl = "img/electric_label.png";
                 break;
             case "6":
             case "Fighting":
-                imageUrl = "img/fighting.png";
+                imageUrl = "img/fighting_label.png";
                 break;
             case "7":
             case "Flying":
-                imageUrl = "img/flying.png";
+                imageUrl = "img/flying_label.png";
                 break;
             case "8":
             case "Ground":
-                imageUrl = "img/ground.png";
+                imageUrl = "img/ground-label.png";
                 break;
             case "9":
             case "Rock":
-                imageUrl = "img/rock.png";
+                imageUrl = "img/rock_label.png";
                 break;
             case "10":
             case "Dark":
-                imageUrl = "img/dark.png";
+                imageUrl = "img/dark_label.png";
                 break;
             case "11":
             case "Ghost":
-                imageUrl = "img/ghost.png";
+                imageUrl = "img/ghost_label.png";
                 break;
             case "12":
             case "Bug":
-                imageUrl = "img/bug.png";
+                imageUrl = "img/bug_label.png";
                 break;
             case "13":
             case "Dragon":
-                imageUrl = "img/dragon.png";
+                imageUrl = "img/dragon_label.png";
                 break;
             case "14":
             case "Ice":
-                imageUrl = "img/ice.png";
+                imageUrl = "img/ice_label.png";
                 break;
             case "15":
             case "Steel":
-                imageUrl = "img/steel.png";
+                imageUrl = "img/steel_label.png";
                 break;
             case "16":
             case "Fairy":
-                imageUrl = "img/fairy.png";
+                imageUrl = "img/fairy_label.png";
                 break;
             case "17":
             case "Poison":
-                imageUrl = "img/poison.png";
+                imageUrl = "img/poison_label.png";
                 break;
             case "18":
             case "Phychic":
-                imageUrl = "img/phychic.png";
+                imageUrl = "img/phychic_label.png";
                 break;
             default:
                 imageUrl = null;

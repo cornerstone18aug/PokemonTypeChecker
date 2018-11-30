@@ -1,0 +1,19 @@
+.root {
+    -fx-font-family: 'Press Start 2P', cursive;
+}
+
+#pokemonNameTag {
+    -fx-font-family: 'Press Start 2P', cursive;
+}
+
+#roarTitle {
+    -fx-font-family: 'Press Start 2P', cursive;
+}
+
+#gridPane {
+    -fx-font-size: 7px;
+}
+
+#roarButton {
+    -fx-background-radius: 15;
+}

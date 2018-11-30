@@ -18,6 +18,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("samplepoke.fxml"));
         primaryStage.setScene(new Scene(root));
+        root.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        root.getStylesheets().add("https://fonts.googleapis.com/css?family=Press+Start+2P");
         primaryStage.show();
 
 //        HBox hbox = new HBox();
