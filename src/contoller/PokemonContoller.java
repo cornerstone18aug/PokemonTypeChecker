@@ -531,7 +531,7 @@ public class PokemonContoller implements Initializable {
         switch (type) {
             case "1":
             case "Normal":
-                imageUrl = "img/nomal_label.png";
+                imageUrl = "img/normal_label.png";
                 break;
             case "2":
             case "Grass":
@@ -559,7 +559,7 @@ public class PokemonContoller implements Initializable {
                 break;
             case "8":
             case "Ground":
-                imageUrl = "img/ground-label.png";
+                imageUrl = "img/ground_label.png";
                 break;
             case "9":
             case "Rock":
