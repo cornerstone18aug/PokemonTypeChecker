@@ -10,10 +10,23 @@
     -fx-font-family: 'Press Start 2P', cursive;
 }
 
-#gridPane {
-    -fx-font-size: 7px;
+.label {
+    -fx-font-size: 12px;
+    -fx-font-family: 'Press Start 2P', cursive;
 }
 
 #roarButton {
     -fx-background-radius: 15;
+}
+
+/** start.fxml **/
+#titleText {
+    -fx-font-family: 'Press Start 2P', cursive;
+    -fx-font-size: 30px;
+}
+
+#startButton {
+    -fx-font-family: 'Press Start 2P', cursive;
+    -fx-background-radius: 30;
+    -fx-background-color: yellow;
 }
