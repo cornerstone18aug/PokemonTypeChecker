@@ -1,6 +1,5 @@
 package dao;
 
-import entity.TypeEnum;
 import model.Pokemon;
 
 import java.sql.*;
@@ -17,7 +16,7 @@ public class PokemonDAO {
 
     private List<String> allPokemonName;
 
-    static String URL = "jdbc:mysql://localhost:3306/pokemon?useUnicode=true&characterEncoding=utf8";
+    static String URL = "jdbc:mysql://127.0.0.1:3306/pokemon?useUnicode=true&characterEncoding=utf8";
     static String USER = "root";
     static String PW = "pokemon";
 
@@ -37,11 +36,8 @@ public class PokemonDAO {
             while (rs.next()) {
                 pokemon.setId(rs.getInt(1));
                 pokemon.setName(rs.getString(2));
-
                 pokemon.setType1(rs.getString(3));
                 pokemon.setType2(rs.getString(4));
-//                pokemon.setType1(typeEnum.setPokemonType1(String.valueOf(rs.getInt(3))));
-//                pokemon.setType2(typeEnum.setPokemonType2(String.valueOf(rs.getInt(4))));
                 pokemon.setImage(rs.getString(5));
                 pokemon.setRoar(rs.getString(6));
             }
