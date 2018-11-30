@@ -19,6 +19,11 @@
     -fx-background-radius: 15;
 }
 
+#weeknessText {
+    -fx-font-family: 'Press Start 2P', cursive;
+    -fx-font-size: 12px;
+}
+
 /** start.fxml **/
 #titleText {
     -fx-font-family: 'Press Start 2P', cursive;
