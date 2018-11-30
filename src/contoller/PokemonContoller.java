@@ -22,9 +22,11 @@ import javafx.scene.media.AudioClip;
 import model.Pokemon;
 import typeChecker.TypeCheckArray;
 
-import java.io.File;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.ResourceBundle;
 
 /**
  * Created by katayama on 2018/11/20.
@@ -164,8 +166,6 @@ public class PokemonContoller implements Initializable {
     private ImageView nonelabel9;
     @FXML
     private ImageView nonelabel10;
-
-
 
     private Pokemon pokemon;
     private PokemonDAO pdao = new PokemonDAO();
@@ -506,7 +506,7 @@ public class PokemonContoller implements Initializable {
                 background2.setStyle("-fx-background-color:linear-gradient(#FAF2D5, #C4AC6C, #BCA66A);");
                 break;
             case "10":
-                background2.setStyle("-fx-background-color:linear-gradient(#A2A2A2, #4E4E4E, #222222);");
+                background2.setStyle("-fx-background-color:linear-gradient(#A2A2A2, #7E7E7E, #555555);");
                 break;
             case "11":
                 background2.setStyle("-fx-background-color:linear-gradient(#EFD5FA, #B68FC7, #8B6B9A);");

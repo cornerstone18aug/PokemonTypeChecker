@@ -10,19 +10,32 @@ import java.io.IOException;
 
 public class Main extends Application {
 
+    private static Stage primaryStage;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("samplepoke.fxml"));
-        primaryStage.setScene(new Scene(root));
-        root.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        root.getStylesheets().add("https://fonts.googleapis.com/css?family=Press+Start+2P");
-        primaryStage.show();
-        primaryStage.setMinWidth(720);
-        primaryStage.setMinHeight(600);
-        primaryStage.setMaxWidth(720);
-        primaryStage.setMaxHeight(600);
+
+        Main.primaryStage = primaryStage;
+        changeView("start.fxml");
+        Main.primaryStage.show();
+        Main.primaryStage.setMinWidth(720);
+        Main.primaryStage.setMinHeight(600);
+        Main.primaryStage.setMaxWidth(720);
+        Main.primaryStage.setMaxHeight(600);
+
     }
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public void changeView(String fxml) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource(fxml));
+            root.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+            root.getStylesheets().add("https://fonts.googleapis.com/css?family=Press+Start+2P");
+            primaryStage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
