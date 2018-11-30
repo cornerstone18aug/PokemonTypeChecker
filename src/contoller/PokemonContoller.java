@@ -289,6 +289,12 @@ public class PokemonContoller implements Initializable {
                 }
             }
         }
+
+        boolean seacretClicked = event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 20;
+        Image bodyImg = new Image("img/bbb.png");
+        if (seacretClicked) {
+            pokemonImage.setImage(bodyImg);
+        }
     }
 
   @FXML
@@ -333,11 +339,13 @@ public class PokemonContoller implements Initializable {
 
   @FXML
     void onRoarButtonclick(ActionEvent event) {
-      String selectedItem = pokemonList.getSelectionModel().getSelectedItem();
-      pokemon =  pdao.search(selectedItem);
-      String roarPath = "file:src/" + pokemon.getRoar();
-      AudioClip note = new AudioClip(roarPath);
-      note.play();
+        if (!(pokemon == null)) {
+            String selectedItem = pokemonList.getSelectionModel().getSelectedItem();
+            pokemon =  pdao.search(selectedItem);
+            String roarPath = "file:src/" + pokemon.getRoar();
+            AudioClip note = new AudioClip(roarPath);
+            note.play();
+        }
     }
 
     public void display(Pokemon displayPokemon) {
