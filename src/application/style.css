@@ -22,7 +22,7 @@
 /** start.fxml **/
 #titleText {
     -fx-font-family: 'Press Start 2P', cursive;
-    -fx-font-size: 28px;
+    -fx-font-size: 30px;
 }
 
 #startButton {
