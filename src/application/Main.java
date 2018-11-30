@@ -17,9 +17,9 @@ public class Main extends Application {
         root.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         root.getStylesheets().add("https://fonts.googleapis.com/css?family=Press+Start+2P");
         primaryStage.show();
-        primaryStage.setMinWidth(680);
+        primaryStage.setMinWidth(720);
         primaryStage.setMinHeight(600);
-        primaryStage.setMaxWidth(680);
+        primaryStage.setMaxWidth(720);
         primaryStage.setMaxHeight(600);
     }
     public static void main(String[] args) {

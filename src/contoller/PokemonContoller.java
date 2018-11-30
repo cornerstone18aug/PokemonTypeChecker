@@ -294,6 +294,9 @@ public class PokemonContoller implements Initializable {
         Image bodyImg = new Image("img/bbb.png");
         if (seacretClicked) {
             pokemonImage.setImage(bodyImg);
+            String roarPath2 = "file:src/sound/bbb.m4a";
+            AudioClip note = new AudioClip(roarPath2);
+            note.play();
         }
     }
 
