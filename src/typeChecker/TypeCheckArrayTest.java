@@ -1,5 +1,6 @@
 package typeChecker;
 
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.DoubleUnaryOperator;
@@ -8,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TypeCheckArrayTest {
 
+            
     @org.junit.jupiter.api.BeforeEach
     void setUp() {
     }

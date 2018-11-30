@@ -16,13 +16,12 @@ public class PokemonDAO {
 
     private List<String> allPokemonName;
 
-    static String URL = "jdbc:mysql://127.0.0.1:3306/pokemon?useUnicode=true&characterEncoding=utf8";
+    static String URL = "jdbc:mysql://localhost:3306/pokemon?useUnicode=true&characterEncoding=utf8";
     static String USER = "root";
     static String PW = "pokemon";
 
     public Pokemon search(String inputName) {
         Pokemon pokemon = new Pokemon();
-        TypeEnum typeEnum = new TypeEnum();
         try {
             String SQL = "SELECT * FROM pokemon WHERE name = '" + inputName + "'";
 
