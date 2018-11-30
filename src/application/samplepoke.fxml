@@ -6,7 +6,6 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -15,9 +14,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contoller.PokemonContoller">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="contoller.PokemonContoller">
    <children>
-      <SplitPane dividerPositions="0.29797979797979796" prefHeight="577.0" prefWidth="680.0">
+      <SplitPane dividerPositions="0.29793510324483774" prefHeight="577.0" prefWidth="680.0">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
@@ -40,19 +39,15 @@
             </AnchorPane>
           <AnchorPane fx:id="background2" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
 
-               <children>
-                  <ImageView fx:id="pokemonImage" layoutX="34.0" layoutY="26.0">
-                     <image>
-                        <Image url="@../img/logo.png" />
-                     </image>
-                  </ImageView>
+                     <children>
+                  <ImageView fx:id="pokemonImage" fitHeight="160.0" fitWidth="160.0" layoutX="34.0" layoutY="26.0" />
                   <Label fx:id="pokemonIdTag" layoutX="219.0" layoutY="42.0" text="POKEMON" />
-                  <Label fx:id="pokemonNameTag" layoutX="218.0" layoutY="59.0" prefHeight="28.0" prefWidth="227.0" text="PokemonName" AnchorPane.bottomAnchor="488.0" AnchorPane.leftAnchor="218.0" AnchorPane.topAnchor="59.0">
+                  <Label fx:id="pokemonNameTag" layoutX="218.0" layoutY="59.0" prefHeight="28.0" prefWidth="227.0" text="PokemonName">
                      <font>
                         <Font name="System Bold" size="21.0" />
                      </font>
                   </Label>
-                  <Label fx:id="roarTitle" layoutX="221.0" layoutY="127.0" text="Roar">
+                  <Label fx:id="roarTitle" layoutX="221.0" layoutY="130.0" text="Roar">
                      <font>
                         <Font size="17.0" />
                      </font>
@@ -63,10 +58,11 @@
                      </padding>
                      <font>
                         <Font size="14.0" />
-                     </font></Button>
-                  <GridPane fx:id="gridPane" gridLinesVisible="true" layoutX="34.0" layoutY="210.0" prefHeight="350.0" prefWidth="414.0">
+                     </font>
+                  </Button>
+                  <GridPane fx:id="gridPane" gridLinesVisible="true" layoutX="34.0" layoutY="210.0" prefHeight="350.0" prefWidth="414.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0">
 
-                    <columnConstraints>
+                          <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="0.0" prefWidth="84.0" />
                       <ColumnConstraints hgrow="SOMETIMES" maxWidth="367.0" minWidth="10.0" prefWidth="367.0" />
                     </columnConstraints>
@@ -78,11 +74,31 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="74.0" text="0.25times" GridPane.rowIndex="3" />
-                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="74.0" text="2times" GridPane.rowIndex="1" />
-                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="75.0" text="0.5times" GridPane.rowIndex="2" />
-                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="74.0" text="4times" />
-                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="74.0" text="NONE" GridPane.rowIndex="4" />
+                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="74.0" text="×0.25" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="74.0" text="×2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="75.0" text="×0.5" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="74.0" text="×4">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="74.0" text="NONE" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
                         <ImageView fx:id="label1" fitHeight="22.0" fitWidth="62.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="20.0" />
