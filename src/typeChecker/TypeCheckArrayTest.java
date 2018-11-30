@@ -1,27 +1,26 @@
 package typeChecker;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
 import java.util.Map;
+import java.util.function.DoubleUnaryOperator;
 
-import static org.junit.Assert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class TypeCheckArrayTest {
 
-    @BeforeEach
+            
+    @org.junit.jupiter.api.BeforeEach
     void setUp() {
     }
 
-    @AfterEach
+    @org.junit.jupiter.api.AfterEach
     void tearDown() {
     }
 
-    @Test
+    @org.junit.jupiter.api.Test
     void weaknesses() {
-        TypeCheckArray.weaknesses("1","1");
-
-    }
+        Map<String, Double> weakness = TypeCheckArray.weaknesses("1", "1");
+        assertEquals(18, weakness.size());
+        }
 }
